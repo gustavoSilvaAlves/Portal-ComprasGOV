@@ -1,0 +1,27 @@
+# .gitignore
+
+# Ambientes Virtuais
+venv/
+.venv/
+env/
+.env
+
+# Arquivos de Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de IDEs (PyCharm, VSCode)
+.idea/
+.vscode/
+
+# Arquivos do Docker Compose (às vezes geram logs ou outros arquivos)
+docker-compose.log
+
+# Arquivos de dependências do sistema
+.DS_Store
+Thumbs.db
+
+# Adicione esta linha para ignorar o arquivo de teste
+test_async_client.py
