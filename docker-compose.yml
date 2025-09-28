@@ -1,10 +1,10 @@
-version: '3.8'
 services:
-  hcaptcha-api:
+  api_cnd:
     build: .
-    image: hcaptcha-api:latest
-    container_name: hcaptcha-solver
-    ports:
-      - "8000:8000"
-    shm_size: '2g'
+    image: api-comprasgov:local
+    container_name: api_comprasgov
+    volumes:
+      - ./downloads:/app/downloads
     restart: unless-stopped
+    ports:
+      - 8521:8521

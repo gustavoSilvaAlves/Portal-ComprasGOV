@@ -23,10 +23,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 
-COPY ./app .
+COPY ./app /app/app
 
 
 
-EXPOSE 8000
+EXPOSE 8521
 # O caminho da aplicação
-CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8000", "main:app"]
+CMD ["gunicorn", "-w", "1", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8521", "app.main:app"]

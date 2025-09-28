@@ -1,4 +1,4 @@
-# API Solver de hCaptcha para o ComprasGov
+# API para consulta das endpoints do ComprasGov.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.116.1-green.svg)
@@ -6,7 +6,7 @@
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-Uma API assíncrona e robusta construída com FastAPI para automatizar a resolução do desafio hCaptcha presente no portal ComprasGov. O projeto utiliza Selenium para simular a interação humana em um navegador e é totalmente containerizado com Docker para facilitar a execução e o deploy em qualquer ambiente.
+Uma API assíncrona e robusta construída com FastAPI para automatizar a resolução do desafio hCaptcha e consulta das endpoints presente no portal ComprasGov. O projeto utiliza Selenium para simular a interação humana em um navegador e é totalmente containerizado com Docker para facilitar a execução e o deploy em qualquer ambiente.
 
 ## ✨ Sobre o Projeto
 
@@ -65,13 +65,13 @@ Você precisa ter o **Docker** e o **Docker Compose** instalados na sua máquina
     ```
 
 3.  **Acesse a API:**
-    A aplicação estará rodando e acessível em `http://localhost:8000`.
+    A aplicação estará rodando e acessível em `http://localhost:8521`.
 
 ## 📖 API - Uso e Endpoints
 
 A API é auto-documentada usando o padrão OpenAPI. Você pode acessar a documentação interativa (Swagger UI) gerada automaticamente pelo FastAPI em:
 
-**`http://localhost:8000/docs`**
+**`http://localhost:8521/docs`**
 
 ### Status da API
 
@@ -79,7 +79,7 @@ A API é auto-documentada usando o padrão OpenAPI. Você pode acessar a documen
 * **Descrição:** Verifica se a API está online e respondendo.
 * **Exemplo de Requisição:**
     ```bash
-    curl -X 'GET' 'http://localhost:8000/api/v1/status'
+    curl -X 'GET' 'http://localhost:8521/api/v1/status'
     ```
 * **Resposta de Sucesso (200 OK):**
     ```json
@@ -94,7 +94,7 @@ A API é auto-documentada usando o padrão OpenAPI. Você pode acessar a documen
 * **Descrição:** Inicia o processo de resolução do hCaptcha e retorna o token obtido. Esta é uma operação demorada e de uso intensivo de recursos.
 * **Exemplo de Requisição:**
     ```bash
-    curl -X 'GET' 'http://localhost:8000/api/v1/get_hcaptcha'
+    curl -X 'GET' 'http://localhost:8521/api/v1/get_hcaptcha'
     ```
 * **Resposta de Sucesso (200 OK):**
     ```json
@@ -115,4 +115,6 @@ A API é auto-documentada usando o padrão OpenAPI. Você pode acessar a documen
     {
       "detail": "Não foi possível capturar o hCaptcha após múltiplas tentativas"
     }
+
     ```
+

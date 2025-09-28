@@ -1,5 +1,3 @@
-# .gitignore
-
 # Ambientes Virtuais
 venv/
 .venv/
